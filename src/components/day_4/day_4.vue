@@ -25,10 +25,11 @@ export default {
 }
 .day_4 {
   width: 400px;
-  height: 500px;
+  /* height: 500px; */
   border: solid 1px black;
   flex: none;
   padding: 10px;
+  /* padding-bottom: 20px; */
 }
 h4 {
   text-align: center;

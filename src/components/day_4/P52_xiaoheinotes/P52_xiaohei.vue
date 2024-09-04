@@ -9,17 +9,28 @@
       <!-- 记事本组件头 -->
       <NoHead></NoHead>
       <!-- 记事本组件身 -->
+      <NoBody></NoBody>
       <!-- 记事本组件尾 -->
+      <NoFoot></NoFoot>
     </div>
   </div>
 </template>
 
 <script>
 import NoHead from "./Head.vue";
+import NoBody from "./Body.vue";
+import NoFoot from "./Foot.vue";
 
 export default {
   components: {
     NoHead,
+    NoBody,
+    NoFoot,
+  },
+  data() {
+    return {
+      metion: [{}],
+    };
   },
   methods: {
     hide() {
@@ -50,16 +61,22 @@ export default {
 .tabar {
   display: flex;
   justify-content: space-between;
+  /* border-bottom: solid 1px black; */
 }
 .main {
-  width: 100%;
-  height: 200px;
-  background: red;
+  /* width: 400px; */
+  /* height: 200px; */
+  /* background: red; */
+  border-top: solid 1px black;
   margin-top: 5px;
   display: block;
+  padding: 30px 0;
+  /* position: absolute; */
+  /* z-index: -100; */
 }
 .anniu {
   width: 50px;
+  cursor: pointer;
 }
 .hidden {
   display: none;

@@ -5,7 +5,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {};
+  },
+};
 </script>
 
 <style scoped>
@@ -19,7 +23,16 @@ export default {};
   border: solid 1px black;
   display: flex;
   justify-content: center;
-  /* padding: 50px; */
   margin: auto;
+  padding: 5px;
+  background-color: white;
+  border-radius: 5px 5px 0 0;
+}
+input {
+  width: 150px;
+}
+button {
+  width: 100px;
+  cursor: pointer;
 }
 </style>
