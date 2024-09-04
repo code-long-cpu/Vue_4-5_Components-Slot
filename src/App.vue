@@ -1,28 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h3>小龙学习vue项目</h3>
+    <div class="content">
+      <!-- day_4 -->
+      <day_4></day_4>
+      <!-- day_5 -->
+      <day_5></day_5>
+      <!-- day_6 -->
+      <!-- day_7 -->
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+import day_4 from "./components/day_4/day_4.vue";
+import day_5 from "./components/day_5/day_5.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    // HelloWorld
+    day_4,
+    day_5,
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<style scoped>
+#app .content {
+  display: flex;
+}
+h3 {
+  width: 800px;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
