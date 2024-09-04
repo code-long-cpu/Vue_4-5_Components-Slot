@@ -1,18 +1,24 @@
 <template>
   <div class="NoteBody">
     <ul>
-      <li><span>1.跑步</span> <a href="">删除</a></li>
-      <li><span>2.睡觉</span> <a href="">删除</a></li>
-      <li><span>2.睡觉</span> <a href="">删除</a></li>
-      <li><span>2.睡觉</span> <a href="">删除</a></li>
+      <li v-for="(item, index) in mission" :key="item.id">
+        <span>{{ index + 1 }}.{{ item.name }}</span>
+        <a href="" @click.prevent="delet(item.id)">删除</a>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {};
+  props: {
+    mission: Array,
+  },
+  methods: {
+    delet(id) {
+      // console.log(id);
+      this.$emit("delet", id);
+    },
   },
 };
 </script>
@@ -47,7 +53,7 @@ export default {
   text-decoration: none;
   color: rgb(187, 187, 187);
 }
-.NoteBody ul li a:hover {
+.NoteBodnewtodo:hover {
   color: rgb(75, 87, 87);
 }
 </style>

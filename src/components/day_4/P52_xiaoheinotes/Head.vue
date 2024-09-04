@@ -1,13 +1,31 @@
 <template>
   <div class="NoteHead">
-    <input type="text" placeholder="请输入任务" /><button>确认输入</button>
+    <input
+      v-model="newtodo"
+      @keyup.enter="add"
+      type="text"
+      placeholder="请输入任务"
+    /><button @click="add">确认输入</button>
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {};
+    return {
+      newtodo: "",
+    };
+  },
+  methods: {
+    add() {
+      if (this.newtodo === "") {
+        alert("请输入任务");
+        return;
+      }
+      // console.log(this.newtodo);
+      this.$emit("add", this.newtodo);
+      this.newtodo = "";
+    },
   },
 };
 </script>
@@ -27,6 +45,7 @@ export default {
   padding: 5px;
   background-color: white;
   border-radius: 5px 5px 0 0;
+  border-bottom: 0;
 }
 input {
   width: 150px;

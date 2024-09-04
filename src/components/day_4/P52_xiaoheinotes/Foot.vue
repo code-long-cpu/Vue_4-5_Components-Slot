@@ -1,9 +1,24 @@
 <template>
-  <div class="NoteFoot"><span>任务量：5件</span><button>全部清除</button></div>
+  <div class="NoteFoot">
+    <span>任务量：{{ mission.length }}件</span
+    ><button @click="clear">全部清除</button>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {};
+  },
+  props: {
+    mission: Array,
+  },
+  methods: {
+    clear() {
+      this.$emit("clear");
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -24,6 +39,7 @@ export default {};
   align-items: center;
   padding: 0 25px;
   position: relative;
+  border-top: 0;
   /* z-index: 1; */
 }
 .NoteFoot::before {

@@ -3,15 +3,16 @@
     <!-- <h5>P52-小黑记事本组件版</h5> -->
     <div class="tabar">
       <span>P52-小黑记事本组件版</span
-      ><button class="anniu" @click="hide">打开</button>
+      ><button class="anniu" @click="hide">关闭</button>
     </div>
     <div class="main">
       <!-- 记事本组件头 -->
-      <NoHead></NoHead>
+      <NoHead @add="add"></NoHead>
       <!-- 记事本组件身 -->
-      <NoBody></NoBody>
+      <NoBody @delet="deletM" :mission="mission"></NoBody>
       <!-- 记事本组件尾 -->
-      <NoFoot></NoFoot>
+      <NoFoot :mission="mission" @clear="clear"></NoFoot>
+      <!-- <NoFoot v-show="mission.length > 0"></NoFoot> -->
     </div>
   </div>
 </template>
@@ -29,18 +30,43 @@ export default {
   },
   data() {
     return {
-      metion: [{}],
+      mission: JSON.parse(localStorage.getItem("mission")) || [
+        { id: 1, name: "跑步" },
+        { id: 2, name: "做作业" },
+        { id: 3, name: "睡大觉" },
+      ],
     };
   },
   methods: {
     hide() {
       document.querySelector(".main").classList.toggle("hidden");
       const anniu = document.querySelector(".anniu");
-      if (anniu.innerHTML === "打开") {
-        anniu.innerHTML = "关闭";
-      } else {
+      if (anniu.innerHTML === "关闭") {
         anniu.innerHTML = "打开";
+      } else {
+        anniu.innerHTML = "关闭";
       }
+    },
+    add(newtodo) {
+      this.mission.unshift({
+        id: +new Date(),
+        name: newtodo,
+      });
+    },
+    deletM(id) {
+      this.mission = this.mission.filter((item) => item.id !== id);
+    },
+    clear() {
+      // 清空数据是吧数组为空数组，而不是null
+      this.mission = [];
+    },
+  },
+  watch: {
+    mission: {
+      deep: true,
+      handler(newVaule) {
+        localStorage.setItem("mission", JSON.stringify(newVaule));
+      },
     },
   },
 };
@@ -69,7 +95,7 @@ export default {
   /* background: red; */
   border-top: solid 1px black;
   margin-top: 5px;
-  display: block;
+  display: hidden;
   padding: 30px 0;
   /* position: absolute; */
   /* z-index: -100; */

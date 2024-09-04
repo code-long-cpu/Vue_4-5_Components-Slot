@@ -1,6 +1,6 @@
 <template>
   <div class="day_4">
-    <h4>day4内容</h4>
+    <h4>VUE-day4内容</h4>
     <!-- <h5>P52-小黑记事本组件版</h5> -->
     <P52_xiaohei></P52_xiaohei>
   </div>
@@ -29,7 +29,6 @@ export default {
   border: solid 1px black;
   flex: none;
   padding: 10px;
-  /* padding-bottom: 20px; */
 }
 h4 {
   text-align: center;
