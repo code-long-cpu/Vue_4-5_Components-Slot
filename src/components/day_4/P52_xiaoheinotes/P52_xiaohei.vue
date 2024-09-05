@@ -1,19 +1,12 @@
 <template>
   <div class="P52">
-    <!-- <h5>P52-小黑记事本组件版</h5> -->
-    <div class="tabar">
-      <span>P52-小黑记事本组件版</span
-      ><button class="anniu" @click="hide">关闭</button>
-    </div>
-    <div class="main">
-      <!-- 记事本组件头 -->
-      <NoHead @add="add"></NoHead>
-      <!-- 记事本组件身 -->
-      <NoBody @delet="deletM" :mission="mission"></NoBody>
-      <!-- 记事本组件尾 -->
-      <NoFoot :mission="mission" @clear="clear"></NoFoot>
-      <!-- <NoFoot v-show="mission.length > 0"></NoFoot> -->
-    </div>
+    <!-- 记事本组件头 -->
+    <NoHead @add="add"></NoHead>
+    <!-- 记事本组件身 -->
+    <NoBody @delet="deletM" :mission="mission"></NoBody>
+    <!-- 记事本组件尾 -->
+    <NoFoot :mission="mission" @clear="clear"></NoFoot>
+    <!-- <NoFoot v-show="mission.length > 0"></NoFoot> -->
   </div>
 </template>
 
@@ -81,25 +74,10 @@ export default {
 .P52 {
   width: 100%;
   /* height: 200px; */
-  border: solid 1px black;
+  /* border: solid 1px black; */
   padding: 5px;
 }
-.tabar {
-  display: flex;
-  justify-content: space-between;
-  /* border-bottom: solid 1px black; */
-}
-.main {
-  /* width: 400px; */
-  /* height: 200px; */
-  /* background: red; */
-  border-top: solid 1px black;
-  margin-top: 5px;
-  display: hidden;
-  padding: 30px 0;
-  /* position: absolute; */
-  /* z-index: -100; */
-}
+
 .anniu {
   width: 50px;
   cursor: pointer;
