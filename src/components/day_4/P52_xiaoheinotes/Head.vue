@@ -49,9 +49,18 @@ export default {
 }
 input {
   width: 150px;
+  border: solid 1px black;
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+  padding-left: 10px;
 }
 button {
   width: 100px;
   cursor: pointer;
+  border: solid 3px rgb(189, 12, 12);
+  border-radius: 0 5px 5px 0;
+  border-left: none;
+  background-color: rgb(189, 12, 12);
+  color: white;
 }
 </style>
