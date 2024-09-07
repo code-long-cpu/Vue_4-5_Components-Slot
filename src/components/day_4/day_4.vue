@@ -18,6 +18,31 @@
         <!-- <P52_xiaohei></P52_xiaohei> -->
       </template>
     </tabbar>
+
+    <br />
+
+    <tabbar>
+      <template v-slot:subtitle>P56 非父子通信-provide和inject</template>
+      <template v-slot:subcontent>
+        <!-- <P52_xiaohei></P52_xiaohei> -->
+      </template>
+    </tabbar>
+
+    <br />
+
+    <tabbar>
+      <template v-slot:subtitle>P57 v-mode详解</template>
+      <template v-slot:subcontent>
+        <!-- <P52_xiaohei></P52_xiaohei> -->
+        ①vue中@input事件是检测输入框，每次输入框值变化，都会触发事件。例如：<br />
+        @input = 'msg =
+        $event.target.value'表示每次输入框的值变化，就把值赋予给msg；
+        <img src="" alt="" />
+        <br />
+        <br />
+        ②实现按按钮就添加新窗口的命令，是通过push数据实现的；
+      </template>
+    </tabbar>
   </div>
 </template>
 
