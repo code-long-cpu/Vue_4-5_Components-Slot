@@ -54,12 +54,15 @@ export default {
 .titile {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   /* border-bottom: solid 1px black; */
   background-color: yellow;
   padding: 5px;
   font-weight: 500;
 }
 .titile span {
+  /* border: solid 1px black; */
+  width: 300px;
   display: inline-block;
   padding-left: 20px;
 }
@@ -73,6 +76,7 @@ export default {
 }
 .slot_button {
   width: 50px;
+  height: 25px;
   cursor: pointer;
   border: solid 1px rgb(185, 185, 185);
   border-radius: 6px;
