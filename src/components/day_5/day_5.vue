@@ -19,6 +19,7 @@ export default {};
   height: 500px;
   border: solid 1px black;
   flex: none;
+  border-radius: 10px;
 }
 h4 {
   text-align: center;

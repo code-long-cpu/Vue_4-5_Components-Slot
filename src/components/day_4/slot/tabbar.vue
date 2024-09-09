@@ -13,10 +13,12 @@
 <script>
 export default {
   // data是个函数，维护独立的一份数据
+  props: {},
   data() {
     return {
-      info: false,
+      info: true,
       text: "展开",
+      res: require("../../../assets/card.png"),
     };
   },
 
@@ -26,7 +28,7 @@ export default {
       this.info = !this.info;
       // document.querySelector(".slot_button").innerHTML = "关闭";
       // const slot_button = document.querySelector(".slot_button");
-      if (this.info) {
+      if (this.text !== "关闭") {
         this.text = "关闭";
       } else {
         this.text = "展开";
@@ -50,6 +52,7 @@ export default {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 8px 2px rgb(161, 161, 161, 0.8);
+  margin: 10px auto;
 }
 .titile {
   display: flex;
@@ -59,12 +62,17 @@ export default {
   background-color: yellow;
   padding: 5px;
   font-weight: 500;
+  overflow: hidden;
+  /* background-image: url("../../../assets/card.png"); */
+  background-size: 90%;
+  background-position: 150% 15%;
 }
 .titile span {
   /* border: solid 1px black; */
   width: 300px;
   display: inline-block;
   padding-left: 20px;
+  /* color: white; */
 }
 .blank {
   /* width: 400px; */
