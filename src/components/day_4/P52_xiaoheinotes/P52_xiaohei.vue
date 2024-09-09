@@ -31,15 +31,15 @@ export default {
     };
   },
   methods: {
-    hide() {
-      document.querySelector(".main").classList.toggle("hidden");
-      const anniu = document.querySelector(".anniu");
-      if (anniu.innerHTML === "关闭") {
-        anniu.innerHTML = "打开";
-      } else {
-        anniu.innerHTML = "关闭";
-      }
-    },
+    // hide() {
+    //   document.querySelector(".main").classList.toggle("hidden");
+    //   const anniu = document.querySelector(".anniu");
+    //   if (anniu.innerHTML === "关闭") {
+    //     anniu.innerHTML = "打开";
+    //   } else {
+    //     anniu.innerHTML = "关闭";
+    //   }
+    // },
     add(newtodo) {
       this.mission.unshift({
         id: +new Date(),

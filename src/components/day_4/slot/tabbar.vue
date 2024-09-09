@@ -15,8 +15,8 @@ export default {
   // data是个函数，维护独立的一份数据
   data() {
     return {
-      info: true,
-      text: "关闭",
+      info: false,
+      text: "展开",
     };
   },
 
