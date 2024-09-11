@@ -30,7 +30,8 @@
     <!-- P57v-mode详解 -->
     <tabbar>
       <template v-slot:subtitle
-        >P57 v-mode详解(下面img困我3个小时，你妈是命名多了个空格)</template
+        >P57
+        v-mode详解(固定写法)(下面img困我3个小时，你妈是命名多了个空格)</template
       >
       <template v-slot:subcontent>
         <!-- <P52_xiaohei></P52_xiaohei> -->
@@ -49,9 +50,16 @@
     </tabbar>
 
     <tabbar>
-      <template v-slot:subtitle> P58-sync修饰符（固定写法） </template>
+      <template v-slot:subtitle> P58 sync修饰符（固定写法） </template>
       <template v-slot:subcontent>
         <P58_father></P58_father>
+      </template>
+    </tabbar>
+
+    <tabbar>
+      <template v-slot:subtitle> P59 ref与$refs获取dom元素与组件实例 </template>
+      <template v-slot:subcontent>
+        <!-- <P58_father></P58_father> -->
       </template>
     </tabbar>
   </div>

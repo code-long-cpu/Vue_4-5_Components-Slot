@@ -16,7 +16,7 @@ export default {
   props: {},
   data() {
     return {
-      info: true,
+      info: false,
       text: "展开",
       res: require("../../../assets/card.png"),
     };

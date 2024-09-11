@@ -66,6 +66,8 @@ export default {
   padding-bottom: 5px;
   border-bottom: solid 1px black;
 }
+.title span {
+}
 .close {
   width: 20px;
   height: 20px;
