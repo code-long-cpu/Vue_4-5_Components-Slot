@@ -29,7 +29,7 @@ export default {
 .day_5 {
   width: 400px;
   height: 500px;
-  border: solid 1px black;
+  border: solid 5px black;
   flex: none;
   border-radius: 10px;
   padding: 10px;

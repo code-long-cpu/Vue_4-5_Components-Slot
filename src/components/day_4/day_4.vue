@@ -100,7 +100,7 @@ export default {
 .day_4 {
   width: 400px;
   /* height: 500px; */
-  border: solid 1px black;
+  border: solid 5px black;
   border-radius: 10px;
   flex: none;
   padding: 10px;

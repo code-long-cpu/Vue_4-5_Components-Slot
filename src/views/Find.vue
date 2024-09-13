@@ -9,9 +9,9 @@
         <button class="quxiao" @click="shanchu(item.id)">X</button>
       </div>
       <div class="words_part">
-        <div class="words" v-for="(item, index) in item.words" :key="item.id">
+        <div class="words">
           <ul>
-            <li>
+            <li v-for="(item, index) in item.words" :key="item.id">
               <span>{{ index + 1 }}-</span>
               <span>{{ item.name }}</span>
               <span>{{ item.translate }}</span>
@@ -19,7 +19,7 @@
           </ul>
         </div>
       </div>
-      <button class="add_word" @click="add_words(item.id)">添加新单词</button>
+      <button class="add_word" @click="add_words(index)">添加新单词</button>
     </div>
     <div class="block_add"><button @click="add">+</button></div>
   </div>
@@ -32,16 +32,16 @@ export default {
     return {
       title: JSON.parse(localStorage.getItem("WordsLists")) || [
         {
-          id: "1",
+          id: 1,
           name: "动物类",
-          words: [{ id: "0", name: "dog", translate: "狗" }],
+          words: [{ id: 1, name: "dog", translate: "狗" }],
         },
         {
-          id: "2",
+          id: 2,
           name: "人类",
           words: [
-            { id: "1", name: "human", translate: "人类" },
-            { id: "2", name: "women", translate: "女人" },
+            { id: 1, name: "human", translate: "人类" },
+            { id: 2, name: "women", translate: "女人" },
           ],
         },
       ],
@@ -53,7 +53,7 @@ export default {
       const titlee = prompt("请输入分类");
       if (titlee) {
         const new_titile = {
-          id: this.title.length + 1,
+          id: +new Date(),
           name: titlee,
           words: [],
         };
@@ -68,12 +68,15 @@ export default {
       const new_trans = prompt("请输入释义");
       if (new_words && new_trans) {
         const newwords = {
-          id: this.words.length + 1,
+          id: +new Date(),
           name: new_words,
           translate: new_trans,
         };
-        this.title[id - 1].words.push(newwords);
+        this.title[id].words.push(newwords);
+      } else {
+        // return;
       }
+      // console.log(this.words);
       localStorage.setItem("WordsLists", JSON.stringify(this.title));
     },
     shanchu(id) {
@@ -132,8 +135,6 @@ p {
   justify-content: space-between;
   align-items: center;
   background-color: rgb(255, 183, 80);
-
-  /* color: white; */
 }
 .biaoti span {
   font-weight: 400;
@@ -177,13 +178,14 @@ p {
   position: absolute;
   bottom: 0px;
   cursor: pointer;
-  border-radius: 0 0 10px 10px;
+  /* border-radius: 0 0 0px 0px; */
   border: 0;
   color: white;
-  background-color: rgb(218, 218, 218);
+  background-color: rgba(35, 34, 45, 1);
+  font-weight: 200;
 }
 .add_word:hover {
-  background-color: rgb(255, 220, 170);
+  background-color: rgb(125, 125, 126);
 }
 .quxiao {
   width: 20px;

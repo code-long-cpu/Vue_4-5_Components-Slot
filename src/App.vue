@@ -9,9 +9,9 @@
         <router-link to="/friend">我的数据</router-link>
       </div>
       <div class="top">
-        <keep-alive :include="findmeEnglind">
-          <router-view></router-view>
-        </keep-alive>
+        <!-- <keep-alive :include="findmeEnglind"> -->
+        <router-view></router-view>
+        <!-- </keep-alive> -->
       </div>
     </div>
 
@@ -85,9 +85,7 @@ h3 {
   border-radius: 20px;
   font-weight: 200;
 }
-.luyou a:last-child {
-  /* border-right: none; */
-}
+
 .luyou a:hover {
   background-color: rgb(87, 85, 95);
 }
