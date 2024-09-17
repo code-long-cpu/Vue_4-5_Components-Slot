@@ -107,7 +107,7 @@ p {
 }
 .words_part {
   /* border: solid 1px black; */
-  padding: 5px 0;
+  padding: 2px 0;
 }
 
 .block,
@@ -120,6 +120,7 @@ p {
   margin: 5px;
   border-radius: 10px;
   box-shadow: 0 3px 10px 0.6px rgba(193, 193, 193, 0.8);
+  overflow: hidden;
 }
 .block {
   /* border: solid 1px black; */
@@ -143,14 +144,19 @@ p {
   padding: 0 5px;
 }
 .words ul {
+  /* border: solid 1px black; */
+  height: 80px;
+  overflow: scroll;
   list-style: none;
 }
 .words ul li {
+  overflow: scroll;
+
   border-bottom: solid 1px rgb(156, 156, 156);
 }
 .words ul li:hover {
   cursor: pointer;
-  background-color: rgb(255, 248, 238);
+  background-color: rgb(241, 241, 241);
 }
 .block_add {
   display: flex;
@@ -161,7 +167,7 @@ p {
   width: 100%;
   height: 100%;
   font-size: 30px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   cursor: pointer;
   border: 0;
   color: white;
